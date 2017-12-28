@@ -1,4 +1,5 @@
-# Below is example of host file - /etc/ansible/hosts. 
+# Below is example of host file, located in - /etc/ansible/hosts. 
+
 # Create an OSEv3 group that contains the masters, nodes, and etcd groups
 [OSEv3:children]
 masters
@@ -14,7 +15,7 @@ ansible_ssh_user=root
 #ansible_become=true
 
 openshift_deployment_type=origin
-openshift_disable_check=docker_storage,memory_availability,package_availability # deployment for insufficient compute resources 
+openshift_disable_check=docker_storage,memory_availability,package_availability # deployment for insufficient compute resource 
 
 # uncomment the following to enable htpasswd authentication; defaults to DenyAllPasswordIdentityProvider
 #openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
