@@ -3,8 +3,8 @@
 
 
 # Install openshift origin and docker on all nodes
-yum -y install centos-release-openshift-origin36 docker 
-# for x in `cat list` ; do ssh $x 'yum -y install centos-release-openshift-origin36 docker'; done # For bulk installation of all host. Pls inculude the host IPs in list file 
+yum -y install centos-release-openshift-origin36 docker ; service docker start ; chkconfig docker on
+# for x in `cat list` ; do ssh $x 'yum -y install centos-release-openshift-origin36 docker; service docker start ; chkconfig docker on'; done # For bulk installation of all host. Pls inculude the host IPs in list file 
 
 
 
@@ -25,8 +25,8 @@ echo -e "\nPls run command below from the ansible master\nansible-playbook /usr/
 
 
 
-# verification after ansible installation completed
+echo -e "\nverification after ansible installation completed"
 # show state
-oc get nodes
+echo -e "\noc get nodes"
 # show state with labels
-oc get nodes --show-labels=true 
+echo -e "\noc get nodes --show-labels=true" 
