@@ -2,7 +2,7 @@
 
 
 
-# Install openshift origin and docker
+# Install openshift origin and docker on all nodes
 yum -y install centos-release-openshift-origin36 docker 
 # for x in `cat list` ; do ssh $x 'yum -y install centos-release-openshift-origin36 docker'; done # For bulk installation of all host. Pls inculude the host IPs in list file 
 
