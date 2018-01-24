@@ -25,8 +25,8 @@ yum -y install atomic-openshift-utils
 
 
 # To run the ansible installation
+echo -e "\nEdit and copy the file (/root/git/openshift/hosts-example) into (/etc/ansible/hosts) before running the ansible installation\n"
 echo -e "\nPls run command below from the ansible master\nansible-playbook /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml\n\n" 
-
 
 
 # Verification after ansible installation completed
