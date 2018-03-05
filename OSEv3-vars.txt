@@ -1,0 +1,14 @@
+# Set variables common for all OSEv3 hosts
+[OSEv3:vars]
+ansible_user=root
+#ansible_become=true
+deployment_type=origin
+containerized=true
+#openshift_release=v1.3.1
+openshift_release=3.6
+openshift_router_selector='router=true'
+openshift_registry_selector='registry=true'
+openshift_disable_check=disk_availability,memory_availability
+openshift_storage_glusterfs_namespace=glusterfs
+openshift_storage_glusterfs_name=storage
+openshift_storage_glusterfs_wipe=True
