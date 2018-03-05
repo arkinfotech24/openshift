@@ -37,5 +37,5 @@ master.nar
 master.nar
 node1.nar openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
 node2.nar openshift_node_labels="{'region': 'primary', 'zone': 'west'}"
-infra-node1.nar openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
-infra-node2.nar openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+#infra-node1.nar openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+#infra-node2.nar openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
