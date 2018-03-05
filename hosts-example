@@ -15,10 +15,14 @@ ansible_ssh_user=root
 #ansible_become=true
 
 openshift_deployment_type=origin
-openshift_disable_check=docker_storage,memory_availability,package_availability # deployment for insufficient compute resource 
+openshift_release=3.6
+
+# deployment for insufficient compute resource 
+openshift_disable_check=docker_storage,memory_availability,package_availability 
 
 # uncomment the following to enable htpasswd authentication; defaults to DenyAllPasswordIdentityProvider
 #openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+
 
 # host group for masters
 [masters]
