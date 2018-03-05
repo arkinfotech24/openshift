@@ -1,0 +1,28 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+
+
+[OSEv3:vars]
+ansible_ssh_user=root
+#ansible_become=true
+openshift_deployment_type=origin
+openshift_release=3.6
+#openshift_disable_check=docker_storage,memory_availability,package_availability # deployment for insufficient compute resource
+openshift_disable_check="memory_availability","disk_availability"
+
+# host group for masters
+[masters]
+master.nar
+
+# host group for etcd
+[etcd]
+master.nar
+
+# host group for nodes, includes region info
+[nodes]
+master.nar
+node0.nar openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+node1.nar openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+node2.nar openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
