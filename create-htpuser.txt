@@ -1,0 +1,4 @@
+# creating openshift admin account through htpasswd
+
+ansible -i inventory.yaml masternode -a "sed -i '$ a `htpasswd -n admin`' /etc/origin/master/htpasswd"
+ansible -i inventory.yaml masternode -a 'oc adm policy add-cluster-role-to-user cluster-admin admin'  
