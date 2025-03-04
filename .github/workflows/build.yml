@@ -1,0 +1,33 @@
+name: Build and Test
+
+on:
+  # Auto-trigger on push to master
+  push:
+    branches: [ master ]
+  # Manual trigger (from GitHub UI)
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for manual build (e.g., testing)"
+        required: true
+        default: "Manual build test"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install  # Replace with your project's setup
+
+      # Build steps
+      - name: Build project
+        run: npm run build  # Customize for your project
+
+      # Optional: Add tests or other steps
+      - name: Run tests
+        run: npm test
